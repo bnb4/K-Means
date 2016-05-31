@@ -1,7 +1,7 @@
 /**
  * 儲存點資料的結構
  */
-public class Point {
+public class Point implements Comparable<Point> {
 
 	private double x = 0.0;
 	private double y = 0.0;
@@ -44,5 +44,29 @@ public class Point {
 
 		if (this.x == p.x && this.y == p.y) return true;
 		return false;
+	}
+	
+	/**
+	 * 設定印出格式
+	 */
+	@Override
+	public String toString() {
+		return "(" + this.x + ", " + this.y + ")";
+	}
+	
+	/**
+	 * 讓 HashSet 能夠避免相同的點座標重複被讀入
+	 */
+	@Override
+	public int hashCode() {
+		return (int) (x * 1000 + y);
+	}
+
+	/**
+	 * 用來排序
+	 */
+	@Override
+	public int compareTo(Point o) {
+		return this.hashCode() - o.hashCode();
 	}
 }

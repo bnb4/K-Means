@@ -23,7 +23,7 @@ public class FileParser {
 				String inStr;
 				if ((inStr = scn.nextLine()).equals("")) continue;
 				
-				String [] spl = inStr.split(" ", 2);
+				String [] spl = inStr.split("\t", 2);
 				if (spl.length != 2) continue;
 				
 				data.add(new Point(Double.parseDouble(spl[0]), Double.parseDouble(spl[1])));
