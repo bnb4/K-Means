@@ -6,7 +6,7 @@ public class Main {
 		
 		for (Point p : points) System.out.println(p);
 		
-		int k = 3;
+		int k = 4;
 
 		Point [][] result = KMeans.getInstance().process(points, k);
 		
